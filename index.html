@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Instafam Wrapped</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Header -->
+  <header class="masthead d-flex">
+    <div class="container text-center my-auto">
+      <h1 class="mb-1">Instafam Wrapped</h1>
+      <h3 class="mb-5">
+        <em>What a year 2020 has been, lets take a look back at some of the memes and likes we gave out this year.</em>
+      </h3>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="content-section bg-primary h-100 justify-content-center d-flex align-items-center" id="about">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1>How many memes were shared?</h1>
+          <h3 class="mb-5">Overall, we shared <b>2230</b> memes!</h3>
+          <p class='lead'>But the goal is always to get a like from every member of the instafam, so how many posts achieved this high acolade?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="content-section" id="portfolio">
+    <div class="container">
+      <div class="content-section-heading text-center">
+        <h2 class="mb-5">7 Memes got a like form every member of the instafam, here they are!</h2>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#!">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">Sender: Kai Groves</div>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/kai-max-likes-1.png" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#!">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">Sender: Scott McIlveen</div>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/scott-max-likes-1.png" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#!">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">Sender: Scott McIlveen</div>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/scott-max-likes-2.png" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#!">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">Sender: Scott McIlveen</div>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/scott-max-likes-3.png" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#!">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">Sender: Kai Groves</div>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/kai-max-likes-2.png" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#!">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">Sender: Jacob Carter</div>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/jacob-max-likes.png" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#!">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">Sender: Harry Johnson</div>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/harry-max-likes.png" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="content-section bg-primary text-white text-center h-100 justify-content-center d-flex align-items-center" id="services">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1>The instafam gives out a lot of love!</h1>
+          <h3 class="mb-5">Overall, we reacted <b>5245</b> times to some fire memes!</h3>
+          <p class='lead'>But who got most of these likes?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Callout -->
+  <section class="content-section h-100 justify-content-center d-flex align-items-center">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1>Total Likes By Users</h1>
+          <canvas id="totalLikes"></canvas>
+          <script>
+            var ctx = document.getElementById('totalLikes').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Ryan', 'Adam', 'Harry', 'Julien', 'Robert', 'Jacob', 'Scott', 'Kai', 'Evan'],
+                    datasets: [{
+                        label: 'Total Likes By User',
+                        data: [641, 369, 864, 198, 0, 399, 1914, 319, 541],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 80, 64, 1)',
+                            'rgba(77, 80, 64, 1)',
+                            'rgba(77, 80, 200, 1)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Callout -->
+  <section class="content-section h-100 justify-content-center d-flex align-items-center" style="background-color: lightgray;">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1>Total Likes Given By Users</h1>
+          <p>(Amount of times you liked a meme someone shared)</p>
+          <canvas id="totalLikesGiven"></canvas>
+          <script>
+            var ctx = document.getElementById('totalLikesGiven').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Ryan', 'Adam', 'Harry', 'Julien', 'Robert', 'Jacob', 'Scott', 'Kai', 'Evan'],
+                    datasets: [{
+                        label: 'Total Likes Given By User',
+                        data: [994, 1359, 797, 649, 0, 314, 507, 152, 473],
+                        backgroundColor: [
+                            'rgba(255, 99, 132)',
+                            'rgba(54, 162, 235)',
+                            'rgba(255, 206, 86)',
+                            'rgba(75, 192, 192)',
+                            'rgba(153, 102, 255)',
+                            'rgba(255, 159, 64)',
+                            'rgba(255, 80, 64, 1)',
+                            'rgba(77, 80, 64, 1)',
+                            'rgba(77, 80, 200, 1)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+          </script>
+          <p>Kai wtf, like more posts</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Callout -->
+  <section class="content-section h-100 justify-content-center d-flex align-items-center">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1>Total Shares By Users</h1>
+          <canvas id="totalShares"></canvas>
+          <script>
+            var ctx = document.getElementById('totalShares').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Ryan', 'Adam', 'Harry', 'Julien', 'Robert', 'Jacob', 'Scott', 'Kai', 'Evan'],
+                    datasets: [{
+                        label: 'Total Shares By User',
+                        data: [279, 141, 301, 75, 0, 139, 648, 99, 184],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 80, 64, 1)',
+                            'rgba(77, 80, 64, 1)',
+                            'rgba(77, 80, 200, 1)',
+                            'rgba(255, 80, 64, 1)',
+                            'rgba(77, 80, 64, 1)',
+                            'rgba(77, 80, 200, 1)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+          </script>
+          <p>Scott is the heartbeat of this chat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+[279, 141, 301, 75, 0, 139, 648, 99, 184]
+  <!-- Callout -->
+  <section class="content-section h-100 justify-content-center d-flex align-items-center" style="background-color: lightgray;">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1>Average Likes Per Post By User</h1>
+          <canvas id="averageLikes"></canvas>
+          <script>
+            var ctx = document.getElementById('averageLikes').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Ryan', 'Adam', 'Harry', 'Julien', 'Robert', 'Jacob', 'Scott', 'Kai', 'Evan'],
+                    datasets: [{
+                        label: 'Average Likes Per Post',
+                        data: [641/279, 369/141, 864/301, 198/75, 0, 399/139, 1914/648, 319/99, 541/184],
+                        backgroundColor: [
+                            'rgba(255, 99, 132)',
+                            'rgba(54, 162, 235)',
+                            'rgba(255, 206, 86)',
+                            'rgba(75, 192, 192)',
+                            'rgba(153, 102, 255)',
+                            'rgba(255, 159, 64)',
+                            'rgba(255, 80, 64, 1)',
+                            'rgba(77, 80, 64, 1)',
+                            'rgba(77, 80, 200, 1)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Callout -->
+  <section class="content-section bg-primary h-100 justify-content-center d-flex align-items-center">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2>Cheers to a great year of memes, and on to the next!</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <ul class="list-inline mb-5">
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white" href="#!">
+            <i class="icon-social-github"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="text-muted small mb-0">Copyright &copy; instafamwrapped 2020</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/stylish-portfolio.min.js"></script>
+
+</body>
+
+</html>
