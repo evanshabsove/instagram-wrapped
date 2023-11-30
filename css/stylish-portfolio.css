@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - Stylish Portfolio v5.0.9 (https://startbootstrap.com/theme/stylish-portfolio)
- * Copyright 2013-2020 Start Bootstrap
+ * Copyright 2013-2023 Start Bootstrap
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-stylish-portfolio/blob/master/LICENSE)
  */
 
@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  font-family: 'Source Sans Pro';
+  font-family: "Source Sans Pro";
 }
 
 .btn-xl {
@@ -26,7 +26,6 @@ body {
 .content-section-heading h2 {
   font-size: 3rem;
 }
-
 .content-section-heading h3 {
   font-size: 1rem;
   text-transform: uppercase;
@@ -55,7 +54,6 @@ h6 {
     height: 75%;
   }
 }
-
 .map iframe {
   pointer-events: none;
 }
@@ -72,15 +70,12 @@ h6 {
   background: rgba(52, 58, 64, 0.5);
   line-height: 45px;
 }
-
 .scroll-to-top:focus, .scroll-to-top:hover {
   color: white;
 }
-
 .scroll-to-top:hover {
   background: #343a40;
 }
-
 .scroll-to-top i {
   font-weight: 800;
 }
@@ -98,13 +93,11 @@ h6 {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .masthead h1 {
   font-size: 4rem;
   margin: 0;
   padding: 0;
 }
-
 @media (min-width: 992px) {
   .masthead {
     height: 100vh;
@@ -191,15 +184,12 @@ h6 {
   line-height: 50px;
   z-index: 999;
 }
-
 .menu-toggle:focus, .menu-toggle:hover {
   color: #fff;
 }
-
 .menu-toggle:hover {
   background: #343a40;
 }
-
 .service-icon {
   background-color: #fff;
   color: #1D809F;
@@ -218,7 +208,6 @@ h6 {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .callout h2 {
   font-size: 3.5rem;
   font-weight: 700;
@@ -233,7 +222,6 @@ h6 {
   max-width: 530px;
   margin: auto auto 1rem;
 }
-
 .portfolio-item .caption {
   display: flex;
   height: 100%;
@@ -244,22 +232,18 @@ h6 {
   bottom: 0;
   z-index: 1;
 }
-
 .portfolio-item .caption .caption-content {
   color: #fff;
   margin: auto 2rem 2rem;
 }
-
 .portfolio-item .caption .caption-content h2 {
   font-size: 0.8rem;
   text-transform: uppercase;
 }
-
 .portfolio-item .caption .caption-content p {
   font-weight: 300;
   font-size: 1.2rem;
 }
-
 @media (min-width: 992px) {
   .portfolio-item {
     max-width: none;
@@ -306,7 +290,6 @@ footer.footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
-
 footer.footer .social-link {
   display: block;
   height: 4rem;
@@ -317,7 +300,6 @@ footer.footer .social-link {
   transition: background-color 0.15s ease-in-out;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
 }
-
 footer.footer .social-link:hover {
   background-color: #155d74;
   text-decoration: none;
@@ -326,7 +308,6 @@ footer.footer .social-link:hover {
 a {
   color: #1D809F;
 }
-
 a:hover, a:focus, a:active {
   color: #155d74;
 }
@@ -336,7 +317,6 @@ a:hover, a:focus, a:active {
   border-color: #1D809F !important;
   color: #fff !important;
 }
-
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background-color: #155d74 !important;
   border-color: #155d74 !important;
@@ -347,7 +327,6 @@ a:hover, a:focus, a:active {
   border-color: #ecb807 !important;
   color: #fff !important;
 }
-
 .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
   background-color: #ba9106 !important;
   border-color: #ba9106 !important;

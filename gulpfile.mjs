@@ -1,20 +1,24 @@
 "use strict";
 
 // Load plugins
-const autoprefixer = require("gulp-autoprefixer");
-const browsersync = require("browser-sync").create();
-const cleanCSS = require("gulp-clean-css");
-const del = require("del");
-const gulp = require("gulp");
-const header = require("gulp-header");
-const merge = require("merge-stream");
-const plumber = require("gulp-plumber");
-const rename = require("gulp-rename");
-const sass = require("gulp-sass");
-const uglify = require("gulp-uglify");
+import autoprefixer from "gulp-autoprefixer";
+import browsersync from "browser-sync";
+import cleanCSS from "gulp-clean-css";
+import { deleteAsync } from 'del';
+import gulp from "gulp";
+import header from "gulp-header";
+import merge from "merge-stream";
+import plumber from "gulp-plumber";
+import rename from "gulp-rename";
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass(dartSass);
+import uglify from "gulp-uglify";
+import { readFileSync } from 'fs';
 
 // Load package.json for banner
-const pkg = require('./package.json');
+const pkgPath = new URL('package.json', import.meta.url).pathname;
+const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
 
 // Set the banner content
 const banner = ['/*!\n',
@@ -24,7 +28,6 @@ const banner = ['/*!\n',
   ' */\n',
   '\n'
 ].join('');
-
 // BrowserSync
 function browserSync(done) {
   browsersync.init({
@@ -44,7 +47,7 @@ function browserSyncReload(done) {
 
 // Clean vendor
 function clean() {
-  return del(["./vendor/"]);
+  return deleteAsync(["./vendor/"]);
 }
 
 // Bring third party dependencies from node_modules into vendor directory
@@ -82,7 +85,7 @@ function css() {
     .pipe(plumber())
     .pipe(sass({
       outputStyle: "expanded",
-      includePaths: "./node_modules",
+      includePaths: "./node_modules"
     }))
     .on("error", sass.logError)
     .pipe(autoprefixer({
@@ -131,10 +134,12 @@ const build = gulp.series(vendor, gulp.parallel(css, js));
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
-exports.css = css;
-exports.js = js;
-exports.clean = clean;
-exports.vendor = vendor;
-exports.build = build;
-exports.watch = watch;
-exports.default = build;
+export {
+  css,
+  js,
+  clean,
+  vendor,
+  build,
+  watch
+};
+export default build;
